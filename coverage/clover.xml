@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1684589928878" clover="3.2.0">
+  <project timestamp="1684589928878" name="All files">
+    <metrics statements="25" coveredstatements="21" conditionals="6" coveredconditionals="3" methods="5" coveredmethods="3" elements="36" coveredelements="27" complexity="0" loc="25" ncloc="25" packages="2" files="3" classes="3"/>
+    <package name="abilink">
+      <metrics statements="11" coveredstatements="10" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <file name="chainNames.js" path="/home/bellabe/Projects/abilink/chainNames.js">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="569" count="1" type="stmt"/>
+      </file>
+      <file name="utils.js" path="/home/bellabe/Projects/abilink/utils.js">
+        <metrics statements="6" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="8" type="stmt"/>
+        <line num="3" count="8" type="cond" truecount="1" falsecount="1"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="6" count="8" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="abilink.lib">
+      <metrics statements="14" coveredstatements="11" conditionals="4" coveredconditionals="2" methods="4" coveredmethods="2"/>
+      <file name="handlers.js" path="/home/bellabe/Projects/abilink/lib/handlers.js">
+        <metrics statements="14" coveredstatements="11" conditionals="4" coveredconditionals="2" methods="4" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
