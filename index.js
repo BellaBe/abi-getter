@@ -16,7 +16,7 @@ app.use(express.json())
 
 const port = process.env.PORT || 3000
 
-app.post('/api/newsletter-signup', api.contractABI)
+app.post('/api/contract-abi', api.contractABI)
 
 app.get('/', home)
 
