@@ -16,7 +16,6 @@
                 class="form-horizontal"
                 role="form"
                 id="getContractABIForm"
-                {{!-- onsubmit="setTimeout(function () { window.location.reload(); }, 10)" --}}
             >
                 <input type="hidden" name="_csrf" value="{{csrf}}" />
                 <div class="form-group">
@@ -84,13 +83,15 @@
             return res.json()
         }).then(json => {
             document.getElementById("getContractABIForm").reset()
-            {{!-- window.location.reload(); --}}
-            container.innerHTML = `<div class="p-2"><div class="card h-100"><div class="card-body bg-light small">${json.result}</div></div></div>`
+            if(json.result) {
+                container.innerHTML = `<div class="p-2"><div class="card h-100"><div class="card-body bg-light small">${json.data}</div></div></div>`
+            } else{
+                container.innerHTML = `<div class="p-2"><div class="card h-100"><div class="card-body bg-light small">${json.message}</div></div></div>`
+            }
         }).catch(err => {
             console.log(err)
-            container.innerHTML = `Sorry there was a probel, please <a href="/newsletter"> try again </a>`
+            container.innerHTML = `Sorry there was a problem, please try to reset</a>`
         })
-        
     })
 </script>
     </div>

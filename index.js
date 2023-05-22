@@ -3,11 +3,10 @@ const { engine } = require('express-handlebars')
 const bodyParser = require('body-parser')
 const {
   homeHandler,
-  errorHandler,
-  abiHandler
+  abiHandler,
+  notFoundHandler,
+  serverErrorHandler
 } = require('./lib/handlers')
-const { NotFoundError } = require('./errors/not-found')
-
 const app = express()
 
 app.disable('x-powered-by')
@@ -26,11 +25,9 @@ app.get('/', homeHandler)
 
 app.post('/abi', abiHandler)
 
-app.all('*', async (req, res, next) => {
-  throw new NotFoundError()
-})
+app.use(notFoundHandler)
 
-app.use(errorHandler)
+app.use(serverErrorHandler)
 
 if (require.main === module) {
   app.listen(port, () => {
