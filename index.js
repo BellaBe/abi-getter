@@ -1,7 +1,7 @@
 const express = require('express')
 const { engine } = require('express-handlebars')
 const bodyParser = require('body-parser')
-const { home, notFound, serverError, newsletter, api } = require('./lib/handlers')
+const { home, notFound, serverError, api } = require('./lib/handlers')
 
 const app = express()
 
@@ -13,14 +13,12 @@ app.set('view engine', 'handlebars')
 app.set('views', './views')
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.json())
-// app.use(express.static(__dirname, '/public'))
 
 const port = process.env.PORT || 3000
 
-app.get('/newsletter', newsletter)
-app.post('/api/newsletter-signup', api.newsletterSignup)
+app.post('/api/newsletter-signup', api.contractABI)
 
-app.get('/chains', home)
+app.get('/', home)
 
 app.use(notFound)
 

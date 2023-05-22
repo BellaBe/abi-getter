@@ -1,17 +1,17 @@
 <div class="row">
-    <div class="col-lg-6 vh-100 position-fixed" id="sticky-sidebar">
+    <div class="col-lg-5 vh-100 position-fixed" id="sticky-sidebar">
         <div class="sticky-top">
             <h1>ABIGetter</h1>
             <h5>Helping users to retrieve EVM powered Smart Contract ABIs</h5>
             <p>ABIGetter is a helper for EVM verified Smart Contracts. Users can retrieve verified Smart Contract ABI without the need to use Chain Scans and embed it directly into their development projects.</p>
-            <p><a href="http://"><i class="bi-github" style="font-size: 2rem; color:cornflowerblue;"></i> <span style="color: black;">View code</span></a></p>
+            <p><a href="https://github.com/BellaBe/abi-getter" target="_blank" rel="noopener noreferrer"><i class="bi-github" style="font-size: 2rem; color:cornflowerblue;"></i> <span style="color: black;">View code</span></a></p>
         </div>
       
         
     </div>
-    <div class="col-lg-6 vh offset-6" id="main">
-        <div class="row">
-            <div class="col-lg-12">
+    <div class="col-lg-7 vh-100 offset-5 bg-light" id="main">
+        <div class="row p-3">
+            <div class="col-lg-12 bg-white">
                  <form
                 class="form-horizontal"
                 role="form"
@@ -48,8 +48,8 @@
             
            
         </div>
-        <div class="row">
-            <div class="col-lg-12">
+        <div class="row p-3">
+            <div class="col-lg-12 bg-white">
                 <div id="getContractABIFormContainer">
            
                 </div>
@@ -85,7 +85,7 @@
         }).then(json => {
             document.getElementById("getContractABIForm").reset()
             {{!-- window.location.reload(); --}}
-            container.innerHTML = `<div class="card bg-light"><div class="card-body small">${json.result}</div><div>`
+            container.innerHTML = `<div class="p-2"><div class="card h-100"><div class="card-body bg-light small">${json.result}</div></div></div>`
         }).catch(err => {
             console.log(err)
             container.innerHTML = `Sorry there was a probel, please <a href="/newsletter"> try again </a>`
