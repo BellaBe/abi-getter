@@ -1,3 +1,6 @@
 .env
 node_modules
 coverage
+commands.md
+heroku git:remote -a abi-getter
+ git push heroku main

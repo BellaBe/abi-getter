@@ -76,7 +76,7 @@
         }
         
         
-        fetch('/api/contract-abi', {
+        fetch('/abi', {
             method: 'post', body, headers
         }).then(res => {
             if(res.status < 200 || res.status > 300)

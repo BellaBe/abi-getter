@@ -1,7 +1,12 @@
 const express = require('express')
 const { engine } = require('express-handlebars')
 const bodyParser = require('body-parser')
-const { home, notFound, serverError, api } = require('./lib/handlers')
+const {
+  homeHandler,
+  errorHandler,
+  abiHandler
+} = require('./lib/handlers')
+const { NotFoundError } = require('./errors/not-found')
 
 const app = express()
 
@@ -11,18 +16,21 @@ app.engine('handlebars', engine())
 
 app.set('view engine', 'handlebars')
 app.set('views', './views')
+app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.json())
 
 const port = process.env.PORT || 3000
 
-app.post('/api/contract-abi', api.contractABI)
+app.get('/', homeHandler)
 
-app.get('/', home)
+app.post('/abi', abiHandler)
 
-app.use(notFound)
+app.all('*', async (req, res, next) => {
+  throw new NotFoundError()
+})
 
-app.use(serverError)
+app.use(errorHandler)
 
 if (require.main === module) {
   app.listen(port, () => {
